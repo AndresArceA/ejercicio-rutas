@@ -27,8 +27,11 @@ import { nvoAlumno } from './consultas/consultas.js';
 app.post("/agregar", async (req, res) => {
   try {
     const { rut, nombre, curso, nivel } = req.body; // Destructuración de los datos del cuerpo de la solicitud
-    const result = await nvoAlumno(rut, nombre, curso, nivel); // Llamar a la función nuevoEstudiante con los datos del alumno
-    res.json(result);
+    const alumnoAgregado = await nvoAlumno(rut, nombre, curso, nivel); // Llamar a la función nuevoEstudiante con los datos del alumno
+    res.json({
+      msg: "Alumno agregado exitosamente",
+      alumno: alumnoAgregado
+    });
   } catch (error) {
     console.log(error);
     res.status(500).json({
