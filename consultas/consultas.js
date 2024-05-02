@@ -44,6 +44,7 @@ const nvoAlumno = async ( rut, nombre, curso, nivel ) => {
       text: `INSERT INTO ${tabla} VALUES ($1, $2, $3, $4) RETURNING *`,
       values: [rut, nombre, curso, nivel],
     });
+    return result.rows[0]; // Devuelve los datos del alumno agregado
     console.log(`Alumno ${nombre} ${rut} agregado con éxito`);
     console.log("Alumno Agregado: ", result.rows[0]);
     console.log(result.rows[0]);
