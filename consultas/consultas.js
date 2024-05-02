@@ -5,9 +5,9 @@ import errores from "../Errores.js";
 
 
 const argumento = process.argv.slice(2);
-const accion = argumento[0];  
-const nombre = argumento[1];
-let rut = argumento[2];
+const accion = argumento[0];
+let rut = argumento[1];  
+const nombre = argumento[2];
 const curso = argumento[3];
 const nivel = argumento[4];
 
